@@ -30,6 +30,20 @@ class ViewController: UIViewController {
     @IBAction func editButtonPressed(_ sender: UIButton) {
         tableView.isEditing = !tableView.isEditing
     }
+    
+    
+    @IBSegueAction func todoVCSegue(_ coder: NSCoder) -> TodoViewController? {
+        let vc = TodoViewController(coder: coder)
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let todo = todos[indexPath.row]
+            vc?.todo = todo
+        }
+        vc?.delegate = self
+        vc?.presentationController?.delegate = self
+        
+        return vc
+    }
 }
 
 //MARK: -Conform To TableView Delegates and Datasource.
@@ -87,4 +101,31 @@ extension ViewController: CheckTableViewCellDelegate {
     }
     
     
+}
+
+//MARK: -Conform To TodoVC Delegate
+extension ViewController: TodoViewControllerDelegate {
+    func todoViewController(_ vc: TodoViewController, didSaveTodo todo: Todo) {
+       
+        dismiss(animated: true) {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                //update
+                self.todos[indexPath.row] = todo
+                self.tableView.reloadRows(at: [indexPath], with: .none)
+            }
+            else {
+                //create
+                self.todos.append(todo)
+                self.tableView.insertRows(at: [IndexPath(row: self.todos.count - 1, section: 1)], with: .automatic)
+            }
+        }
+    }
+}
+
+extension ViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
 }

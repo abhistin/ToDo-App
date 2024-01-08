@@ -16,6 +16,7 @@
 		FE7EFB1D2B4BE7EF0018B2A3 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7EFB1C2B4BE7EF0018B2A3 /* Todo.swift */; };
 		FE7EFB232B4BF0D40018B2A3 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7EFB222B4BF0D40018B2A3 /* Checkbox.swift */; };
 		FE7EFB252B4BF1150018B2A3 /* CheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7EFB242B4BF1150018B2A3 /* CheckTableViewCell.swift */; };
+		FE7EFB272B4C08880018B2A3 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7EFB262B4C08880018B2A3 /* TodoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FE7EFB1C2B4BE7EF0018B2A3 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		FE7EFB222B4BF0D40018B2A3 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		FE7EFB242B4BF1150018B2A3 /* CheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTableViewCell.swift; sourceTree = "<group>"; };
+		FE7EFB262B4C08880018B2A3 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				FE7EFB0C2B4BE71C0018B2A3 /* ViewController.swift */,
+				FE7EFB262B4C08880018B2A3 /* TodoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				FE7EFB252B4BF1150018B2A3 /* CheckTableViewCell.swift in Sources */,
 				FE7EFB0D2B4BE71C0018B2A3 /* ViewController.swift in Sources */,
+				FE7EFB272B4C08880018B2A3 /* TodoViewController.swift in Sources */,
 				FE7EFB092B4BE71C0018B2A3 /* AppDelegate.swift in Sources */,
 				FE7EFB0B2B4BE71C0018B2A3 /* SceneDelegate.swift in Sources */,
 				FE7EFB1D2B4BE7EF0018B2A3 /* Todo.swift in Sources */,

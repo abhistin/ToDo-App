@@ -33,6 +33,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                <connections>
+                                    <segue destination="swh-81-u3h" kind="show" id="wv8-4v-9Ul"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4G-XQ-qfP">
                                 <rect key="frame" x="20" y="47" width="51" height="35"/>
@@ -86,6 +89,7 @@
                                         <connections>
                                             <outlet property="checkbox" destination="Hyt-ve-O1i" id="JLc-xW-V8x"/>
                                             <outlet property="label" destination="5aF-uW-7ee" id="i7e-rA-Lmr"/>
+                                            <segue destination="swh-81-u3h" kind="show" destinationCreationSelector="todoVCSegue:" id="pPK-Tu-adJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -121,9 +125,61 @@
             </objects>
             <point key="canvasLocation" x="12.977099236641221" y="3.5211267605633805"/>
         </scene>
+        <!--Todo View Controller-->
+        <scene sceneID="Fkr-gC-6c6">
+            <objects>
+                <viewController id="swh-81-u3h" customClass="TodoViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LQp-5e-wkq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a new Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XWz-9Z-Bdw">
+                                <rect key="frame" x="20" y="95" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hKu-bG-B6e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1Q-rk-VFA">
+                                <rect key="frame" x="310" y="10" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Fd1-lB-Ny6"/>
+                                    <constraint firstAttribute="height" constant="30" id="eZP-SS-FE0"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.down.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="save:" destination="swh-81-u3h" eventType="touchUpInside" id="ga8-1O-sd8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="03F-Ur-oCH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="03F-Ur-oCH" firstAttribute="trailing" secondItem="Z1Q-rk-VFA" secondAttribute="trailing" constant="23" id="0OD-KP-RYd"/>
+                            <constraint firstItem="XWz-9Z-Bdw" firstAttribute="leading" secondItem="03F-Ur-oCH" secondAttribute="leading" constant="20" id="3X1-HR-m0t"/>
+                            <constraint firstItem="03F-Ur-oCH" firstAttribute="trailing" secondItem="XWz-9Z-Bdw" secondAttribute="trailing" constant="20" id="M2L-o3-QN3"/>
+                            <constraint firstItem="XWz-9Z-Bdw" firstAttribute="top" secondItem="Z1Q-rk-VFA" secondAttribute="bottom" constant="55" id="rlT-mc-JKv"/>
+                            <constraint firstItem="Z1Q-rk-VFA" firstAttribute="top" secondItem="03F-Ur-oCH" secondAttribute="top" constant="10" id="zSD-p1-d9g"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HIR-Eb-VQd"/>
+                    <connections>
+                        <outlet property="textField" destination="XWz-9Z-Bdw" id="2Iq-Kk-o6I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K3x-J3-HZY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="880" y="4"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wv8-4v-9Ul"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>
         <image name="square.and.pencil" catalog="system" width="128" height="121"/>
         <systemColor name="secondarySystemFillColor">
             <color red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
